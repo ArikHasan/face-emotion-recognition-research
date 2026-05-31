@@ -1,0 +1,7 @@
+FROM python:3.10-slim
+WORKDIR /app
+COPY . /app
+RUN pip install --upgrade pip setuptools wheel
+RUN pip install --no-cache-dir moviepy==1.0.3 Pillow==10.2.0
+RUN pip install --no-cache-dir fer==22.5.1 tensorflow==2.15.0 numpy==1.26.4 matplotlib==3.8.4 pandas==2.2.2 requests opencv-python==4.9.0.80 opencv-contrib-python facenet-pytorch ffmpeg==1.4
+ENTRYPOINT ["python", "app.py"]
